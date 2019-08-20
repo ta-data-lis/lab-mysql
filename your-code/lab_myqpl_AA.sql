@@ -15,6 +15,7 @@ PRIMARY KEY (cust_ID),
 Customer_ID INT NOT NULL,
 Name VARCHAR(20) NOT NULL,
  Phone_Number VARCHAR(15) NOT NULL,
+ Year VARCHAR(4) NOT NULL,
  Email VARCHAR(20) NOT NULL,
  Address TEXT NOT NULL,
  City VARCHAR(20) NOT NULL,
@@ -35,4 +36,6 @@ InvoiceNumber VARCHAR(10) NOT NULL,
 Date DATE NOT NULL)
  ;
  
-#other items of the table were added directly in workbench visual tool.
+ #other parameters of the table were added directly in workbench.alter
+ 
+ 
