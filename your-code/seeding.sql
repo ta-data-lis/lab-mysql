@@ -11,3 +11,5 @@ insert into salespersons () values (0 , "Petey Cruiser", "Madrid"),
 insert into invoices () values (0 , "2018-08-22", 1, 1, 2), 
 (1 , "2018-12-31", 0, 1, 0), 
 (2 , "2019-01-22", 2, 0, 2);
+
+select * from invoices;
