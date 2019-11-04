@@ -1,4 +1,4 @@
-![Ironhack logo](https://i.imgur.com/1QgrNNw.png)
+<img src="https://bit.ly/2VnXWr2" alt="Ironhack Logo" width="100"/>
 
 # Lab | MySQL
 
@@ -64,6 +64,9 @@ The purpose of *database seeding* is to provide some dummy data for an empty dat
 You'll be using the `INSERT INTO` statement for this purpose. A tutorial you can refer to can be fine [here](https://dev.mysql.com/doc/refman/8.0/en/insert.html).
 
 For your convenience, we provide you some example dummy data. These dummy data may not readily work with your database depending on how you have designed your database. You may need to change them to the appropriate form.
+
+Note: by default, the AUTO-INCREMENT attribute in MySQL starts from 1, and for these tables you'll need it to start from 0, in order to do that you'll need to run this snippet: `SET sql_mode = "NO_AUTO_VALUE_ON_ZERO";`
+
 
 ### Cars
 
