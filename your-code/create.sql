@@ -40,10 +40,10 @@ CREATE TABLE customers (
 CREATE TABLE Invoices (
     invoices_id int auto_increment NOT NULL,
     invoices_no int NOT NULL,
+	invoices_date varchar(20),
     car_id int,
     costumers_id int,
     salespersons_id int,
-    invoices_date varchar(20),
     PRIMARY KEY (invoices_id),
     FOREIGN KEY (car_id) REFERENCES car(car_id),
     FOREIGN KEY (costumers_id) REFERENCES customers(costumers_id),
