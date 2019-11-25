@@ -1,0 +1,113 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf500
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17900\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 ## Challenge 3 - Seeding the Database\
+\
+The purpose of *database seeding* is to provide some dummy data for an empty database so that software development can be started based on the dummy data. In this challenge you will create **`seeding.sql`** which inserts dummy data rows into the tables of your new database.\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 INSERT INTO Cars(ID, Manufacturer, Model, Year, Color)\
+    -> VALUES (0,3K096I98581DHSNUP,'Volkswagen','Tiguan','2019','Blue\'92),\
+	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (1, ZM8G7BEUQZ97IH46V, \'91Peugeot\'92, \'91Rifter\'92 ,\'92 2019\'92, \'92Red\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (2, RKXVNNIHLVVZOUB4M , \'91Ford\'92, \'92Fusion\'92, \'922018\'92, \'92White\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	->
+\f0\fs24 \cf0 \CocoaLigature1   (3, HKNDGS7CU31E9Z7JW, \'91Toyota\'92,  \'91RAV4\'92,  \'912018\'92,  \'91Silver\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (4, DAM41UDN3CHU2WVF6,  \'91Volvo\'92,  \'91V60\'92,  \'912019\'92,  \'91Gray\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	->
+\f0\fs24 \cf0 \CocoaLigature1   (5, DAM41UDN3CHU2WVF6 , \'91Volvo\'92,  \'91V60 Cross Country\'92,  \'912019\'92, \'91Gray\'92), 
+\f1\fs22 \cf2 \CocoaLigature0 \
+    -> SET sql_mode = "NO_AUTO_VALUE_ON_ZERO";
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 INSERT INTO Customers (ID, Name, Phone number, email, address, city, state, country, zip/postal code)  \
+    -> VALUES 
+\f0\fs24 \cf0 \CocoaLigature1 (0, \'91Pablo Picasso\'92, +34 636 17 63 82, \'91ppicasso@hotmail.com\'92, \'91Paseo de la Chopera\'92, 14, \'91Madrid\'92, \'91Madrid\'92, \'92Spain\'92,  28045),\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0         
+\f1\fs22 \cf2 \CocoaLigature0 -> 
+\f0\fs24 \cf0 \CocoaLigature1 (1, \'91Abraham Lincoln |\'92,  +1 305 907 7086, \'91alincoln@hotmail.com\'92, 120 SW 8th St, \'91Miami\'92 , \'91Florida\'92, \'91United States\'92, 33130), \
+        
+\f1\fs22 \cf2 \CocoaLigature0 -> 
+\f0\fs24 \cf0 \CocoaLigature1 (2, \'91Napol\'e9on Bonaparte\'92, +33 1 79 75 40 00, \'91nbonaparte@hotmail.com\'92, \'9240 Rue du Colis\'e9e\'92, \'91Paris\'92, \'91\'cele-de-France\'92, \'91France\'92, 75008), \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0     -> SET sql_mode = "NO_AUTO_VALUE_ON_ZERO";
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 INSERT INTO Invoices (ID, Date, CAR, Customer, Salesperson, ID Customers, ID Staff, ID Cars)   \
+   	-> VALUES (0,
+\f0\fs24 \cf0 \CocoaLigature1 22-08-2018, \'91Volvo\'92, Jan\'92, \'91Piet\'92, 0, 1, 3),\
+
+\f1\fs22 \cf2 \CocoaLigature0     	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (1, 31-12-2018, \'91Volvo\'92, 3, 0, 5),\
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (2, 22-01-2019, \'91Renault\'92, 2, 2, 7),\
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> SET sql_mode = "NO_AUTO_VALUE_ON_ZERO";
+\f0\fs24 \cf0 \CocoaLigature1 \
+\
+
+\f1\fs22 \cf2 \CocoaLigature0 INSERT INTO Salespersons (ID, Name, Store)\
+	-> VALUES
+\f0\fs24 \cf0 \CocoaLigature1  (0, \'92Petey Cruiser\'92, \'91Madrid\'92),\
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (1, \'91Anna Sthesia\'92, \'91Barcelona\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (2, \'91Paul Molive\'92, \'91Berlin\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (3, \'91Gail Forcewind\'92, \'91Paris\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (4, \'92Paige Turner\'92  \'91Mimia\'92 ),\
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (5, \'92Bob Frapples\'92  \'91Mexico City\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (6, \'92Walter Melon\'92  \'91Amsterdam\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (7, \'92Shonda Leer\'92  \'91S\'e3o Paulo\'92), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> SET sql_mode = "NO_AUTO_VALUE_ON_ZERO";
+\f0\fs24 \cf0 \CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs22 \cf2 \CocoaLigature0 INSERT INTO IDs (ID Cars, ID Staff, ID Customer)\
+	-> VALUES
+\f0\fs24 \cf0 \CocoaLigature1  (0, 1, 2),\
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (1, 0, 1), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> 
+\f0\fs24 \cf0 \CocoaLigature1 (2, 1, 0 ), \
+
+\f1\fs22 \cf2 \CocoaLigature0 	-> SET sql_mode = "NO_AUTO_VALUE_ON_ZERO";
+\f0\fs24 \cf0 \CocoaLigature1 \
+ \
+}

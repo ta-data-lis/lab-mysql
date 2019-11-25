@@ -1,0 +1,57 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf500
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 1. **Then following the `USE` statement, write all your `CREATE TABLE` statements.** You'll need one `CREATE TABLE` statement for each table you decide to create. Make sure to end each statement with a semicolon. \
+\
+```mysql\
+	USE lab_mysql;\
+	```\
+# All my CREATE TABLE Statements:\
+\
+mysql> CREATE TABLE Cars (\
+    -> ID INT,\
+    -> Manufacturer VARCHAR(255),\
+    -> Model VARCHAR(50),\
+    -> Year DATE,\
+    -> Color CHAR(50)\
+    -> );\
+Query OK, 0 rows affected (0.03 sec)\
+\
+mysql> CREATE TABLE Customers (\
+    -> ID INT,\
+    -> Name VARCHAR(255),\
+    -> Phone number INT,\
+    -> email VARCHAR(255), \
+	-> address VARCHAR(255),\
+    -> city VARCHAR(255),\
+    -> state VARCHAR(255),\
+    -> country VARCHAR(255)\
+	-> zip/postal code INT,\
+    -> );\
+\
+mysql> CREATE TABLE Salespersons (\
+    -> ID Staff INT,\
+    -> Name VARCHAR (255),\
+    -> Store VARCHAR (255),\
+    -> );\
+\
+mysql> CREATE TABLE Invoices (\
+    -> ID INT,\
+    -> Date DATE,\
+    -> CAR INT,\
+    -> Customer VARCHAR(255), \
+	-> Salesperson VARCHAR(255),\
+    -> ID Customers INT,\
+    -> ID Staff INT,\
+    -> ID Cars INT,\
+    -> );\
+\
+mysql> CREATE TABLE IDs (\
+    -> ID Cars INT,\
+    -> ID Staff INT,\
+    -> ID Customer INT,\
+  	-> );}
