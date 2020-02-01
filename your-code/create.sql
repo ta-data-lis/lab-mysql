@@ -1,14 +1,14 @@
 create database lab_mysq;
 
-CREATE TABLE IF NOT EXISTS Cars (
+CREATE TABLE IF NOT EXISTS cars (
 Unnamed INT,
-VIN INT PRIMARY KEY,
+VIN VArchar(20) PRIMARY KEY,
 manufacturer VARCHAR (100),
 model VARCHAR (100),
-manufacturer VARCHAR (100),
 year INT,
 priceBuyed FLOAT,
-CONSTRAINT `storID_ibfk` FOREIGN KEY (`storeID`) REFERENCES `stores` (`storeID`) ON DELETE CASCADE ON UPDATE CASCADE
+StoreID INT,
+FOREIGN KEY (`StoreID`) REFERENCES `stores` (`StoreID`)
 );
 
 CREATE TABLE IF NOT EXISTS salespersons (
@@ -17,10 +17,11 @@ StaffID INT PRIMARY KEY,
 hiringdate datetime,
 jobfunction Varchar(50),
 wage Float,
-CONSTRAINT `storID_ibfk` FOREIGN KEY (`storeID`) REFERENCES `stores` (`storeID`) ON DELETE CASCADE ON UPDATE CASCADE
+StoreID INT,
+FOREIGN KEY (`StoreID`) REFERENCES `stores` (`StoreID`)
 );
 
-CREATE TABLE IF NOT EXISTS salespersons (
+CREATE TABLE IF NOT EXISTS customers (
 Unnamed INT,
 CustomerID INT PRIMARY KEY,
 nameC Varchar(200),
@@ -51,7 +52,10 @@ Unnamed INT,
 InvoiceNr INT PRIMARY KEY,
 dateI datetime,
 pricePayed FLOAT,
-CONSTRAINT `VIN_ibfk` FOREIGN KEY (`VIN`) REFERENCES `cars` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
-CONSTRAINT `CustomerID_ibfk` FOREIGN KEY (`CustomerID`) REFERENCES `customers` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
-CONSTRAINT `VIN_ibfk` FOREIGN KEY (`VIN`) REFERENCES `cars` (`VIN`) ON DELETE CASCADE ON UPDATE CASCADE,
+VIN INT,
+CustomerID INT,
+StaffID INT,
+FOREIGN KEY (`VIN`) REFERENCES `cars` (`VIN`),
+FOREIGN KEY (`CustomerID`) REFERENCES `customers` (`CUstomerID`),
+FOREIGN KEY (`StaffID`) REFERENCES salespersons (`StaffID`)
 );
