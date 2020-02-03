@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>lab_mysql</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>8774029276726229902</string>
+			<key>name</key>
+			<string>localhost</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentFilterV2</key>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>filterClass</key>
+				<string>groupNode</string>
+				<key>isConjunction</key>
+				<true/>
+			</dict>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0
+			b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRk
+			YXRhgAGoCwwXGBkaHiVVJG51bGzTDQ4PEBMWV05TLmtleXNaTlMu
+			b2JqZWN0c1YkY2xhc3OiERKAAoADohQVgASABYAHVHR5cGVUcm93
+			c18QHVNlbGVjdGlvbkRldGFpbFR5cGVOU0luZGV4U2V00hsPHB1c
+			TlNSYW5nZUNvdW50EACABtIfICEiWiRjbGFzc25hbWVYJGNsYXNz
+			ZXNaTlNJbmRleFNldKIjJFpOU0luZGV4U2V0WE5TT2JqZWN00h8g
+			JidcTlNEaWN0aW9uYXJ5oiYkAAgAEQAaACQAKQAyADcASQBMAFEA
+			UwBcAGIAaQBxAHwAgwCGAIgAigCNAI8AkQCTAJgAnQC9AMIAzwDR
+			ANMA2ADjAOwA9wD6AQUBDgETASAAAAAAAAACAQAAAAAAAAAoAAAA
+			AAAAAAAAAAAAAAABIw==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {695, 481}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>USE lab_mysql;
+
+CREATE TABLE `cars` (
+  `vin` int PRIMARY KEY,
+  `manufacturer` varchar(255),
+  `model` varchar(255),
+  `year` datetime,
+  `color` varchar(255)
+);
+
+CREATE TABLE `customers` (
+  `id` int PRIMARY KEY,
+  `name` varchar(255),
+  `phone_number` int,
+  `email` varchar(255),
+  `address` varchar(255),
+  `city` varchar(255),
+  `state_province` varchar(255),
+  `country` varchar(255),
+  `zip_postalcode` varchar(255)
+);
+
+CREATE TABLE `salespersons` (
+  `id` int PRIMARY KEY,
+  `name` varchar(255),
+  `store` varchar(255)
+);
+
+CREATE TABLE `invoices` (
+  `invoice_number` int PRIMARY KEY,
+  `date` datetime,
+  `car` int,
+  `customer` int,
+  `salesperson` int
+);
+
+ALTER TABLE `invoices` ADD FOREIGN KEY (`car`) REFERENCES `cars` (`vin`);
+
+ALTER TABLE `invoices` ADD FOREIGN KEY (`customer`) REFERENCES `customers` (`id`);
+
+ALTER TABLE `invoices` ADD FOREIGN KEY (`salesperson`) REFERENCES `salespersons` (`id`);</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>231</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>ALTER TABLE `invoices` ADD FOREIGN KEY (`salesperson`) REFERENCES `salespersons` (`id`)</string>
+		<string>ALTER TABLE `invoices` ADD FOREIGN KEY (`customer`) REFERENCES `customers` (`id`)</string>
+		<string>ALTER TABLE `invoices` ADD FOREIGN KEY (`car`) REFERENCES `cars` (`vin`)</string>
+		<string>CREATE TABLE `invoices` (
+  `invoice_number` int PRIMARY KEY,
+  `date` datetime,
+  `car` int,
+  `customer` int,
+  `salesperson` int
+)</string>
+		<string>CREATE TABLE `salespersons` (
+  `id` int PRIMARY KEY,
+  `name` varchar(255),
+  `store` varchar(255)
+)</string>
+		<string>CREATE TABLE `customers` (
+  `id` int PRIMARY KEY,
+  `name` varchar(255),
+  `phone_number` int,
+  `email` varchar(255),
+  `address` varchar(255),
+  `city` varchar(255),
+  `state_province` varchar(255),
+  `country` varchar(255),
+  `zip_postalcode` varchar(255)
+)</string>
+		<string>CREATE TABLE `cars` (
+  `vin` int PRIMARY KEY,
+  `manufacturer` varchar(255),
+  `model` varchar(255),
+  `year` datetime,
+  `color` varchar(255)
+)</string>
+		<string>USE lab_mysql</string>
+		<string>source create.sql</string>
+		<string>SELECT SUM(`TITLE COUNT`)
+FROM publications.who_many_where_summary</string>
+		<string>SELECT COUNT(*)
+FROM publications.titleauthor</string>
+		<string>SELECT COUNT (*)
+FROM publications.titleauthor</string>
+		<string>SELECT COUNT(royaltyper)
+FROM publications.titleauthor</string>
+		<string># Challenge 2 - Who Have Published How Many At Where?
+CREATE TEMPORARY TABLE publications.who_many_where_summary
+SELECT authors.au_id AS "AUTHOR ID", authors.au_lname AS "LAST NAME", authors.au_fname AS "FIRST NAME", publishers.pub_name AS "PUBLISHER", COUNT(titles.title) AS "TITLE COUNT"
+FROM publications.titleauthor
+INNER JOIN publications.authors ON titleauthor.au_id = authors.au_id 
+INNER JOIN publications.titles ON titleauthor.title_id = titles.title_id
+INNER JOIN publications.publishers ON titles.pub_id = publishers.pub_id
+GROUP BY authors.au_id, publishers.pub_id</string>
+		<string>DROP TABLE IF EXISTS who_many_where_summary</string>
+		<string>SELECT SUM(TITLECOUNT)
+FROM publications.who_many_where_summary</string>
+		<string>SELECT SUM(TITLE COUNT)
+FROM publications.who_many_where_summary</string>
+		<string># Challenge 2 - Who Have Published How Many At Where?
+CREATE TEMPORARY TABLE publications.who_many_where_summary
+SELECT authors.au_id AS "AUTHOR ID", authors.au_lname AS "LAST NAME", authors.au_fname AS "FIRST NAME", publishers.pub_name AS "PUBLISHER", COUNT(titles.title) AS "TITLECOUNT"
+FROM publications.titleauthor
+INNER JOIN publications.authors ON titleauthor.au_id = authors.au_id 
+INNER JOIN publications.titles ON titleauthor.title_id = titles.title_id
+INNER JOIN publications.publishers ON titles.pub_id = publishers.pub_id
+GROUP BY authors.au_id, publishers.pub_id</string>
+		<string>SELECT SUM(royaltyper)
+FROM publications.titleauthor</string>
+		<string>SELECT SUM(a.royaltyper)
+FROM publications.titleauthor a</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>8.0.18</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
