@@ -34,7 +34,7 @@ CREATE TABLE `the_cars` (
   CREATE TABLE `staff` (
   `staff_id` varchar(30) NOT NULL,
   `store_id` varchar(30) NOT NULL,
-  `name` char(40) NOT NULL,
+  `name_` char(40) NOT NULL,
   `phone` char(12) NOT NULL,
   `email` char(20) NOT NULL,
   `address` varchar(40) DEFAULT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE `the_cars` (
   
   CREATE TABLE `store` (
   `store_id` varchar(30) NOT NULL,
-  `name` char(40) NOT NULL,
+  `name_` char(40) NOT NULL,
   `phone` char(12) NOT NULL,
   `email` char(20) NOT NULL,
   `address` varchar(40) DEFAULT NULL,
