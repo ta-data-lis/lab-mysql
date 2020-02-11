@@ -33,6 +33,6 @@ ALTER COLUMN name CHAR (50);
 ALTER TABLE salespersons
 ALTER COLUMN store_id CHAR(50);
 
-#INSERT INTO invoices (invoice_number, date) 
-#VALUES(852399038,'2018-08-22'), (731166526,'2018-12-31'), (271135104,'2019-01-22');
+INSERT INTO invoices (invoice_number, date) 
+VALUES(852399038,'2018-08-22'), (731166526,'2018-12-31'), (271135104,'2019-01-22');
 
