@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `lab_mysql` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `lab_mysql`;
 -- MySQL dump 10.13  Distrib 8.0.19, for macos10.15 (x86_64)
 --
 -- Host: localhost    Database: lab_mysql
@@ -38,6 +40,7 @@ CREATE TABLE `Car` (
 
 LOCK TABLES `Car` WRITE;
 /*!40000 ALTER TABLE `Car` DISABLE KEYS */;
+INSERT INTO `Car` VALUES ('3K096I98581DHSNUP','Volkswagen','Tiguan',2019,'Blue'),('RKXVNNIHLVVZOUB4M','Ford','Fusion',2018,'White'),('ZM8G7BEUQZ97IH46V','Peugeot','Rifter',2019,'Red');
 /*!40000 ALTER TABLE `Car` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,7 +54,7 @@ DROP TABLE IF EXISTS `Customer`;
 CREATE TABLE `Customer` (
   `Customer_ID` int NOT NULL,
   `Name` varchar(45) NOT NULL,
-  `Phone` int DEFAULT NULL,
+  `Phone` varchar(20) DEFAULT NULL,
   `Email` varchar(45) DEFAULT NULL,
   `City` varchar(45) DEFAULT NULL,
   `State` varchar(45) DEFAULT NULL,
@@ -67,6 +70,7 @@ CREATE TABLE `Customer` (
 
 LOCK TABLES `Customer` WRITE;
 /*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
+INSERT INTO `Customer` VALUES (10001,'Pablo Picasso','+34636176382','Paseo de la Chopera, 14','Madrid','Madrid ','Spain','28045'),(20001,'Abraham Lincoln','+13059077086','120 SW 8th St',' Miami','Florida','United States','33130'),(30001,'Napoléon Bonaparte','+33179754000','40 Rue du Colisée','Paris','Île-de-France','France','75008');
 /*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -79,8 +83,8 @@ DROP TABLE IF EXISTS `Invoice`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Invoice` (
   `InvoiceNR` int NOT NULL,
-  `Date` datetime NOT NULL,
-  `VIN Number` int NOT NULL,
+  `Date` date NOT NULL,
+  `VIN_NR` char(17) NOT NULL,
   `Customer_ID` int NOT NULL,
   `Staff_ID` int NOT NULL,
   PRIMARY KEY (`InvoiceNR`)
@@ -93,6 +97,7 @@ CREATE TABLE `Invoice` (
 
 LOCK TABLES `Invoice` WRITE;
 /*!40000 ALTER TABLE `Invoice` DISABLE KEYS */;
+INSERT INTO `Invoice` VALUES (271135104,'2019-01-22','2',2,7),(731166526,'2018-12-31','3',0,5),(852399038,'2018-08-22','0',1,3);
 /*!40000 ALTER TABLE `Invoice` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,6 +122,7 @@ CREATE TABLE `Staff` (
 
 LOCK TABLES `Staff` WRITE;
 /*!40000 ALTER TABLE `Staff` DISABLE KEYS */;
+INSERT INTO `Staff` VALUES (1,'Petey Cruiser','Madrid'),(2,'Anna Sthesia ','Barcelona'),(3,'Paul Molive','Berlin'),(4,'Gail Forcewind','Paris'),(5,'Paige Turner',' Mimia'),(6,'Bob Frapples','Mexico City'),(7,'Walter Melon','Amsterdam'),(8,'Shonda Leer','São Paulo');
 /*!40000 ALTER TABLE `Staff` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -129,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-19 17:49:42
+-- Dump completed on 2020-03-19 18:34:39
