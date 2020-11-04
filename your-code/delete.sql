@@ -1,0 +1,7 @@
+USE lab_mysql;
+
+LOCK TABLES Cars WRITE;
+DELETE FROM Cars
+WHERE ID = 4;
+
+SELECT * FROM Cars;
