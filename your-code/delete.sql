@@ -1,0 +1,6 @@
+#Delete file
+
+USE lab_mysql;
+
+DELETE FROM CARS
+WHERE VIN = 'RKXVNNIHLVVZOUB5M'
