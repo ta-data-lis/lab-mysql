@@ -1,0 +1,50 @@
+CREATE DATABASE `lab_mysql`;
+
+USE `lab_mysql`;
+
+DROP TABLE IF EXISTS `Cars`;
+CREATE TABLE `Cars`(
+	`ID` INT NOT NULL AUTO_INCREMENT,
+    `VIN` VARCHAR(45),
+    `Manufacturer` VARCHAR(45) NOT NULL,
+    `Model` VARCHAR(45) NOT NULL,
+    `Year` INT(10) NOT NULL,
+    `Color` VARCHAR(45),
+    PRIMARY KEY (`ID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `Costumers`;
+CREATE TABLE `Costumers`(
+	`ID` INT NOT NULL AUTO_INCREMENT,
+    `Costumer ID` INT(11) NOT NULL,
+    `Name` VARCHAR(45) NOT NULL,
+    `Phone number` VARCHAR(11),
+    `Email` VARCHAR(45) NOT NULL,
+    `Address` VARCHAR(45),
+    `City` VARCHAR(45),
+    `State/Province` VARCHAR(45) NOT NULL,
+    `Country` VARCHAR(45) NOT NULL,
+    `Postal` VARCHAR(45),
+    PRIMARY KEY (`ID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `Salespersons`;
+CREATE TABLE `Salespersons`(
+	`ID` INT NOT NULL AUTO_INCREMENT,
+    `Staff ID` INT(11) NOT NULL,
+    `Name` VARCHAR(45) NOT NULL,
+    `Store ID` VARCHAR(45) NOT NULL UNIQUE,
+    PRIMARY KEY (`ID`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+DROP TABLE IF EXISTS `Invoices`;
+CREATE TABLE `Invoices`(
+	`ID` INT NOT NULL AUTO_INCREMENT,
+    `Invoice Number` INT (11) NOT NULL,
+    `Date` DATE,
+    `Car` INT NOT NULL,
+    `Costumer` INT NOT NULL,
+    `Sales Person` INT NOT NULL, 
+    PRIMARY KEY (`ID`),
+    CONSTRAINT `FK_CarInvoice` FOREIGN KEY (`Car`) REFERENCES `Cars`(`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT `FK_CostumerInvoice` FOREIGN KEY (`Costumer`) REFERENCES `Costumers`(`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `FK_SalespersonInvoice` FOREIGN KEY (`Sales Person`) REFERENCES `Salespersons`(`ID`) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
