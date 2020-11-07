@@ -8,7 +8,7 @@ CREATE TABLE `cars` (
   `color` varchar(255)
 );
 
-DROP TABLE IF EXISTS `cars`;
+-- DROP TABLE IF EXISTS `cars`;
 
 CREATE TABLE `customers` (
   `customer_id` varchar(255),
@@ -22,7 +22,7 @@ CREATE TABLE `customers` (
   `postal_code` varchar(255)
 );
 
-DROP TABLE IF EXISTS `customers`;
+-- DROP TABLE IF EXISTS `customers`;
 
 CREATE TABLE `salespersons` (
   `staff_id` varchar(255),
@@ -30,7 +30,7 @@ CREATE TABLE `salespersons` (
   `store` varchar(255)
 );
 
-DROP TABLE IF EXISTS `salespersons`;
+-- DROP TABLE IF EXISTS `salespersons`;
 
 CREATE TABLE `invoices` (
   `invoice_number` int,
@@ -40,4 +40,4 @@ CREATE TABLE `invoices` (
   `number_of_salespersons` int
 );
 
-DROP TABLE IF EXISTS `invoices`;
+-- DROP TABLE IF EXISTS `invoices`;
