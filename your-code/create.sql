@@ -72,5 +72,5 @@ select * from invoices i ;
 insert into invoices (Invoice_number,sale_date,car,customer,Salesperson)
 values ('8523990389','2018-08-22','0','1','3'),('731166526','2018-12-31','3','0','5'),('271135104','2019-01-22','2','2','7');
 
-alter table salesperson 
-where 
+
+
