@@ -40,4 +40,3 @@ CREATE TABLE `salesstaff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `cars`;
