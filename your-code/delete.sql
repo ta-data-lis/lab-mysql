@@ -1,0 +1,7 @@
+USE CARS;
+
+SELECT * from car  
+
+DELETE FROM car WHERE vin='DAM41UDN3CHU2WVF6';
+
+SELECT * from car  
