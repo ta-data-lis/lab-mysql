@@ -1,6 +1,6 @@
 CREATE DATABASE lab8;
 
-CREATE TABLE lab8.Cars (
+CREATE TABLE Cars (
 index_id  BIGINT ,
 VIN	 BIGINT NOT NULL,
 manufacturer VARCHAR(64) NOT NULL,
@@ -10,16 +10,15 @@ colour VARCHAR(64),
 PRIMARY KEY (VIN)
 );
 
-CREATE TABLE lab8.Salesperson (
-sales_index  BIGINT ,
-Salesman_ID VARCHAR(64),
+CREATE TABLE Salesperson (
+Staff_ID  BIGINT ,
 Salesman_name VARCHAR(64),
 Store VARCHAR(64),
-PRIMARY KEY (Salesman_ID)
+Sales_person_Index BIGINT,
+PRIMARY KEY (Staff_ID)
 );
 
-
-CREATE TABLE lab8.Costumers (
+CREATE TABLE Costumers (
 costumer_index BIGINT ,
 costumer_ID	 BIGINT NOT NULL,
 costumer_name VARCHAR(64) NOT NULL,
@@ -33,14 +32,14 @@ zip_code VARCHAR(64),
 PRIMARY KEY (costumer_ID)
 );
 
-CREATE TABLE lab8.Invoices (
+CREATE TABLE Invoices (
 invoice_index BIGINT ,
 invoice_number	 BIGINT NOT NULL,
-date_invoice VARCHAR(64),
+date_invoice DATE,
+VIN BIGINT,
 car VARCHAR(64),
 costumer_ID BIGINT,
 staff_ID BIGINT,
 PRIMARY KEY (invoice_number)
 );
-
 
