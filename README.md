@@ -55,7 +55,7 @@ Use pen and paper to create the design, take a picture with your phone and send 
 
 1. **Then following the `USE` statement, write all your `CREATE TABLE` statements.** You'll need one `CREATE TABLE` statement for each table you decide to create. Make sure to end each statement with a semicolon. 
 
-This `.sql` file will be one of your deliverables. A `.sql` file is often used by software/data engineers to automate database operations. For example, to execute all the commands in the `create.sql` file, you can simply execute `source create.sql;` in MySQL command line. Many programming languages such as Python and PHP can also execute `.sql` files.
+This `.sql` file will be one of your deliverables. A `.sql` file is often used by software/data engineers to automate database operationzs. For example, to execute all the commands in the `create.sql` file, you can simply execute `source create.sql;` in MySQL command line. Many programming languages such as Python and PHP can also execute `.sql` files.
 
 ## Challenge 3 - Seeding the Database
 
