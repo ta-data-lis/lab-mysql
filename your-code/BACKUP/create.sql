@@ -2,16 +2,16 @@ CREATE DATABASE lab_mysql;
 USE lab_mysql;
 
 CREATE TABLE Cars (
-	carID int PRIMARY KEY,
+	carID int,
 	VIN varchar(31),
     manufacturer varchar(63),
     model varchar(63),
     year smallint,
-    color varchar(31)
+    color varchar(15)
     );
     
 CREATE TABLE Customers (
-	ID int PRIMARY KEY,
+	ID int,
 	customerID int,
     name varchar(63),
     phone_number varchar(31),
@@ -24,17 +24,18 @@ CREATE TABLE Customers (
     );
     
 CREATE TABLE Salespersons (
-	ID int PRIMARY KEY,
+	ID int,
     staffID int,
     name varchar(63),
     store varchar(15)
     );
     
 CREATE TABLE Invoices (
-	ID int PRIMARY KEY,
+	ID int,
     invoice_number int,
     date VARCHAR(15),
     car int,
     customer int,
     salesperson int
     );
+    
