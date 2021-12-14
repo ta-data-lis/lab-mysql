@@ -24,8 +24,8 @@ VALUES ('00004', 'Gail Forcewind', 'Paris');
 INSERT INTO salespersons(Staff_ID, Staff_name, Store)
 VALUES ('00005', 'Paige Turner', 'Mimia');
 
-INSERT INTO invoices(invoice, invoice_date, carsid, customersid, salespersonsid)
-VALUES ('852399038', '2018-08-22', '0', '1', '3');
+INSERT INTO invoices(invoiceid, invoice, invoice_date, carsid, customersid, salespersonsid)
+VALUES ('0', '852399038', '2018-08-22', '0', '1', '3');
 
 INSERT INTO invoices(invoice, invoice_date, carsid, customersid, salespersonsid)
 VALUES ('731166526', '2018-12-31', '1', '0', '4');

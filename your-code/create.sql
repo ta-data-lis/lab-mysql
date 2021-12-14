@@ -32,6 +32,7 @@ Store           VARCHAR(20)
 );
 
 CREATE TABLE invoices(
+invoiceid      INT PRIMARY KEY AUTO_INCREMENT,
 invoice         VARCHAR(10),
 invoice_date    DATE,
 carsid          INT,
