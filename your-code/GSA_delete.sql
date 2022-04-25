@@ -1,0 +1,2 @@
+DELETE FROM cars_lab_mysql.cars
+WHERE VIN = 'DAM41UDN3CHU2WVF6' AND id = 4;
