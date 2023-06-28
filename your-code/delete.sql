@@ -1,8 +1,19 @@
-SELECT *
-FROM lab_mysql.cars;
+USE lab_mysql;
 
-DELETE FROM lab_mysql.cars
-WHERE (`ID` = '4');
+/*To find duplicate entries*/
 
-SELECT *
-FROM lab_mysql.cars;
+SELECT VIN, COUNT(*) as count
+FROM Cars
+GROUP BY VIN
+HAVING count > 1;
+
+
+/*Delete*/
+SET SQL_SAFE_UPDATES = 0;
+
+SELECT * FROM Cars;
+
+DELETE FROM Cars
+WHERE (ID = 4);
+
+SET SQL_SAFE_UPDATES = 1;

@@ -1,24 +1,29 @@
-SELECT *
-FROM lab_mysql.salespersons;
+USE lab_mysql;
 
-UPDATE lab_mysql.salespersons
-SET store = 'Miami' WHERE (`id_salesperson` = 5);
+/*Deactivate safe updates on mySQL*/
+SET SQL_SAFE_UPDATES = 0;
 
-SELECT *
-FROM lab_mysql.salespersons;
+/*Update*/
+SELECT * FROM Salespersons;
+
+UPDATE Salespersons
+SET store = 'Miami'
+WHERE (ID = 4);
+
+SELECT * FROM Customers;
+
+UPDATE Customers
+SET Email = 'ppicasso@gmail.com'
+WHERE (ID = 0);
+
+UPDATE Customers
+SET Email = 'lincoln@us.gov'
+WHERE (ID = 1);
+
+UPDATE Customers
+SET Email = 'hello@napoleon.me'
+WHERE (ID = 2);
 
 
-SELECT *
-FROM lab_mysql.customers;
-
-UPDATE lab_mysql.customers
-SET `email` = 'ppicasso@gmail.com' WHERE (`id_customer` = '10001');
-
-UPDATE lab_mysql.customers
-SET `email` = 'lincoln@us.gov' WHERE (`id_customer` = '20001');
-
-UPDATE lab_mysql.customers
-SET `email` = 'hello@napoleon.me' WHERE (`id_customer` = '30001');
-
-SELECT *
-FROM lab_mysql.customers;
+/*Activate safe updates on mySQL*/
+SET SQL_SAFE_UPDATES = 1;

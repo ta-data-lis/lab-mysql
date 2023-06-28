@@ -1,51 +1,60 @@
+/*Create the (empty) mySQL database*/
 SELECT CURRENT_USER();
 
 CREATE DATABASE IF NOT EXISTS lab_mysql;
 
+/*Define the database that will be used in the queries*/
 USE lab_mysql;
 
-
-CREATE TABLE IF NOT EXISTS cars(
-ID INT,
-VIN VARCHAR(30),
-manufacturer VARCHAR(30),
-model VARCHAR(30),
-year_car INT,
-color VARCHAR(30));
-
-SELECT * FROM lab_mysql.cars;
-
-
-CREATE TABLE IF NOT EXISTS customers(
-ID INT,
-id_customer INT,
-name_customer VARCHAR(30),
-phone VARCHAR(30),
-email VARCHAR(30),
-address VARCHAR(30),
-city VARCHAR(30),
-state VARCHAR(30),
-country VARCHAR(30),
-postcode VARCHAR(30));
-
-SELECT * FROM lab_mysql.customers;
+/*Populate the database with tables*/
+CREATE TABLE IF NOT EXISTS Cars(
+								ID INT PRIMARY KEY AUTO_INCREMENT, 
+								VIN VARCHAR(17) NOT NULL,
+								Manufacturer VARCHAR(40) NOT NULL,
+								Model VARCHAR(40),
+								`Year` YEAR,
+								Color VARCHAR(30)
+                                );
+                                
+SELECT * FROM Cars;
 
 
-CREATE TABLE IF NOT EXISTS salespersons(
-ID INT,
-id_salesperson INT,
-name_salesperson VARCHAR(30),
-store VARCHAR(30));
+CREATE TABLE IF NOT EXISTS Customers(
+									 ID INT PRIMARY KEY AUTO_INCREMENT,
+									 `Customer ID` INT NOT NULL,
+									 `Name` VARCHAR(100) NOT NULL,
+									 Phone VARCHAR(20),
+									 Email VARCHAR(50),
+									 Address VARCHAR(100) NOT NULL,
+									 City VARCHAR(50) NOT NULL,
+									 `State/Province` VARCHAR(50),
+									 Country VARCHAR(50) NOT NULL,
+									 Postal VARCHAR(10)
+                                     );
 
-SELECT * FROM lab_mysql.salespersons;
+SELECT * FROM Customers;
 
 
-CREATE TABLE IF NOT EXISTS invoices(
-ID INT,
-invoice_number INT,
-invoice_date DATE,
-car INT,
-customer INT,
-salesperson INT);
+CREATE TABLE IF NOT EXISTS Salespersons(
+										ID INT PRIMARY KEY AUTO_INCREMENT,
+										`Staff ID` VARCHAR(5) NOT NULL,
+										`Name` VARCHAR(100),
+										Store VARCHAR(50)
+                                        );
 
-SELECT * FROM lab_mysql.invoices;
+SELECT * FROM Salespersons;
+
+
+CREATE TABLE IF NOT EXISTS Invoices(
+									ID INT PRIMARY KEY AUTO_INCREMENT,
+									`Invoice Number` INT NOT NULL,
+									`Date` DATE NOT NULL,
+									Car INT,
+									Customer INT,
+									`Sales Person` INT,
+                                    FOREIGN KEY (Car) REFERENCES Cars(ID),
+                                    FOREIGN KEY (Customer) REFERENCES Customers(ID),
+                                    FOREIGN KEY (`Sales Person`) REFERENCES Salespersons(ID)
+                                    );
+
+SELECT * FROM Invoices;
